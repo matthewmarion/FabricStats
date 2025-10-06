@@ -24,7 +24,7 @@ public class MinecraftStatsFabric implements DedicatedServerModInitializer {
     public void onInitializeServer() {
         try {
             System.out.println("MinecraftStatsFabric.onInitializeServer");
-            Path configPath = Path.of("..","config", "cli", "config.json");
+            Path configPath = Path.of("fabricstats", "config.json");
             final Config config = new JSONConfig(configPath);
 
             // Hardcode Dynmap's built-in webserver path as document root
