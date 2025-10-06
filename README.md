@@ -1,3 +1,58 @@
+# FabricStats
+FabricStats is a lightweight Fabric mod that embeds the MinecraftStats updater into a Fabric server and publishes the web UI through Dynmap.
+
+Important notes:
+- This fork is for a friend’s SMP and is not a general, supported release.
+- Requires Fabric Loader, Fabric API, and Dynmap (Fabric) installed on the server.
+
+## Build
+- The mod JAR is created at `build/libs/` (use the main JAR, not `-sources`).
+
+## Install
+1) Place the built JAR into your server’s `mods/` along with:
+   - Fabric API (matching your MC/loader version)
+   - Dynmap (Fabric) for your MC version
+2) Start the server once. If no config exists, create one at:
+   - `server-root/fabricstats/config.json`
+
+## Configuration
+- Use the same structure as `config/cli/config.json` in this repo. Minimal example:
+  ```json
+  {
+    "server": {
+      "sources": [ { "path": ".", "worldName": "world" } ]
+    },
+    "data": {
+      "documentRoot": "../www",
+      "eventsDir": "events",
+      "statsDir": "../../stats"
+    },
+    "client": {
+      "defaultLanguage": "en",
+      "playersPerPage": 100,
+      "playerCacheUUIDPrefix": 2,
+      "serverName": "",
+      "showLastOnline": true
+    },
+    "players": {
+      "inactiveDays": 7,
+      "updateInactive": false,
+      "profileUpdateInterval": 3,
+      "minPlaytime": 0,
+      "excludeBanned": true,
+      "excludeOps": false,
+      "excludeUUIDs": []
+    },
+    "crown": { "bronze": 1, "silver": 2, "gold": 4 }
+  }
+  ```
+
+## Output & Web UI
+- The mod writes the MinecraftStats site into Dynmap’s web root: `dynmap/web/mcstats/`.
+- You must drag the contents from `www/` except `data` from this repo into the `dynmap/web/mcstats/`
+- Access it at: `http://<server-host>:8123/mcstats/index.html`.
+- On first run, the web assets are extracted and data files are generated under `dynmap/web/mcstats/data/`.
+
 # MinecraftStats
 
 [![Minecraft 1.13 to 1.12](https://img.shields.io/badge/Minecraft-1.13%20--%201.20-brightgreen)](https://www.minecraft.net/) [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://github.com/pdinklag/MinecraftStats/blob/master/LICENSE.txt) [![Example Installation at DVGaming.com](https://img.shields.io/badge/Example-DVGaming.COM%20Snapshot%20Server-blue)](http://mine3.dvgaming.com/) [![Discord](https://img.shields.io/discord/850982115633790976.svg?label=Discord&logo=discord&logoColor=ffffff&color=8399E8&labelColor=7A7EC2)](https://discord.gg/brH5PGG8By)
