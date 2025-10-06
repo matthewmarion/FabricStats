@@ -2,15 +2,15 @@
     "server": {
         "sources": [
             {
-                "path": "/path/to/server",
+                "path": ".",
                 "worldName": "world"
             }
         ]
     },
     "data": {
-        "documentRoot": "/var/www/html",
+        "documentRoot": "../www",
         "eventsDir": "events",
-        "statsDir": "stats"
+        "statsDir": "../../stats"
     },
     "crown": {
         "silver": 2,
@@ -21,14 +21,14 @@
         "defaultLanguage": "en",
         "playersPerPage": 100,
         "playerCacheUUIDPrefix": 2,
-        "serverName": null,
+        "serverName": "My Server",
         "showLastOnline": true
     },
     "players": {
         "inactiveDays": 7,
         "updateInactive": false,
         "profileUpdateInterval": 3,
-        "minPlaytime": 60,
+        "minPlaytime": 0,
         "excludeBanned": true,
         "excludeOps": false,
         "excludeUUIDs": []

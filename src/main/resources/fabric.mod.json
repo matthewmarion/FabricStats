@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "fabricstats",
+	"version": "${version}",
+	"name": "fabricstats",
+	"description": "MinecraftStats for Fabric",
+	"authors": [
+		"matthew marion (hm04)"
+	],
+	"contact": {
+		"homepage": "https://github.com/matthewmarion/fabricstats",
+		"sources": "https://github.com/matthewmarion/fabricstats"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/fabricstats/icon.png",
+	"environment": "server",
+	"entrypoints": {
+		"server": [
+			"de.pdinklag.mcstats.fabric.MinecraftStatsFabric"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.21.8",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

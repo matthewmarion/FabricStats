@@ -364,7 +364,7 @@ public abstract class Updater {
         }
 
         // update player profiles and filter valid players
-        PlayerFilter inactiveFilter = getInactiveFilter();
+        PlayerFilter inactiveFilter = getInactiveFilter() ;
         PlayerProfileProvider localProvider = getLocalProfileProvider();
         PlayerProfileProvider authenticProvider = getAuthenticProfileProvider();
 
